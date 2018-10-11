@@ -1,0 +1,290 @@
+﻿@{
+    ViewData["Title"] = "Convenios Marco";
+}
+
+<div class="container-fluid fill">
+    <div class="row contenido fondoblanco justify-content-between @ViewBag.fondo">
+        <div class="col-12 order-2 order-md-1 col-md-4 col-lg-3 hide-scroll">
+            <div class="viewport">
+                <div class="row sin-margen fill2">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 cuadro cuadro-interno cuadro-verde mobiletitulo2">
+                                <div class="row">
+                                    <div class="col-1 sin-padding">
+                                        <a href="~/#item2" class="not-underline">
+                                            <span class="icon icon-bottom"></span>
+                                        </a>
+                                    </div>
+                                    <div class="col-11">
+                                        <h2>
+                                            <b>
+                                                Convenios Marco
+                                            </b>
+                                        </h2>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            @if (ViewBag.contiene == true)
+                            {
+                                var viewDataEmpleado = ViewData["unico"] as DLL.Post;
+                                <div class="mobile-NO">
+                                    @foreach (var otros in ViewData["listaA"] as Dictionary<string, string>)
+                                    {
+
+                                        <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="@otros.Key" class="col-12 cuadro cuadro-small cuadro-link cuadro-verde">
+                                            <div class="row align-items-center">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <h4>
+                                                        <span>@otros.Value </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                                    <div class="col-12 cuadro cuadro-interno cuadro-verde mobiletitulo2">
+                                        <div class="row">
+                                            <div class="col-1 sin-padding">
+                                                <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="" class="not-underline">
+                                                    <span class="icon icon-bottom-small"></span>
+                                                </a>
+                                            </div>
+                                            <div class="col-11">
+                                                <h4>
+                                                    @viewDataEmpleado.Pregunta
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 cuadro cuadro-interno cuadro-verde descripcionmobile">
+                                        <p class="text-left">
+                                            @Html.Raw(viewDataEmpleado.Descripcion)
+                                            <br /><br />
+                                        </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="volver">
+                                            <b>
+                                                <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="" class="text-verde">
+                                                    << Volver
+                                                </a>
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div class="mobile-SI">
+                                        @foreach (var otros in ViewData["listaA"] as Dictionary<string, string>)
+                                        {
+
+                                            <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="@otros.Key" class="col-12 cuadro cuadro-small cuadro-link cuadro-verde">
+                                                <div class="row align-items-center">
+                                                    <div class="col-1"></div>
+                                                    <div class="col-11">
+                                                        <h4>
+                                                            <span>@otros.Value </span>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        }
+                                    </div>
+                                    @foreach (var otros in ViewData["listaB"] as Dictionary<string, string>)
+                                    {
+
+                                        <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="@otros.Key" class="col-12 cuadro cuadro-small cuadro-link cuadro-verde">
+                                            <div class="row align-items-center">
+                                                <div class="col-1"></div>
+                                                <div class="col-11">
+                                                    <h4>
+                                                        <span>@otros.Value </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                    }
+                                    else
+                                    {
+                                    @foreach (var std in ViewData["Listado"] as IList<DLL.Post>)
+                                    {
+
+                                        <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="@std.IdUrl" class="col-12 cuadro cuadro-interno cuadro-link cuadro-verde">
+                                            <div class="row align-items-center">
+                                                <div class="col-2"><span class="icon icon-entrar"></span></div>
+                                                <div class="col-10">
+                                                    <h4>
+                                                        <span>@std.Pregunta </span>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                    }
+                                    @if (ViewBag.contiene == false)
+                                    {
+                                        <div class="col-12">
+                                            <p class="volver">
+                                                <b>
+                                                    <a href="~/#item2" class="text-blanco">
+                                                        << Volver
+                                                    </a>
+                                                </b>
+                                            </p>
+                                        </div>
+                                        <a asp-area="" asp-controller="GobiernoCentral" asp-action="LicitacionesPublicas" class="col-12 cuadro cuadro-small cuadro-morado text-center">
+                                            <h2>
+                                                Licitaciones Públicas
+                                            </h2>
+                                        </a>
+                                        <a asp-area="" asp-controller="GobiernoCentral" asp-action="TratosDirectos" class="col-12 cuadro cuadro-small cuadro-amarillo text-center">
+                                            <h2>
+                                                Tratos Directos
+                                            </h2>
+                                        </a>
+                                        <a asp-area="" asp-controller="GobiernoCentral" asp-action="EmpresasoSocios" class="col-12 cuadro cuadro-small cuadro-azul text-center">
+                                            <h2>
+                                                Empresas y/o Socios
+                                            </h2>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        @if (ViewBag.contiene == true)
+        {
+            var viewDataEmpleado = ViewData["unico"] as DLL.Post;
+            <div class="col-12 order-1 order-md-2 col-md-8 col-lg-9 hide-scroll">
+                <div class="viewport">
+                    <div class="row sin-margen fill2">
+                        <div class="col-12 cuadro cuadro-interno cuadro-verde mobiletitulo">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>
+                                        <b>
+                                            Convenios Marco
+                                        </b>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 cuadro cuadro-interno cuadro-verde mobiletitulo">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>
+                                        @viewDataEmpleado.Pregunta
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <input type="hidden" id="grafico1" value="@viewDataEmpleado.GraficoWeb" />
+                            <input type="hidden" id="grafico2" value="@viewDataEmpleado.GraficoMobile" />
+                            <div id="grafMuestro">
+                            </div>
+
+                            <div class="cargando">
+                                <div class="cargando-image">
+                                    <p class="text-center">
+                                        Esta visualización descarga aproximadamente 4 millones de datos, por lo que puede tardar algunos segundos en procesar. Además, el servicio es proveído por Tableau Public, por lo que la velocidad de carga está sujeta a la disponibilidad de sus servidores.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="fullvideo()" class="subir">
+                        <p>
+                            <small>Compartir:</small>
+                            <a><img class="redes" onclick="compartir(1)" src="~/images/facebook.svg" /></a>
+                            <a><img class="redes" onclick="compartir(2)" src="~/images/twitter.svg" /></a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="col-12 order-1 order-md-2 col-md-5 ">
+                <section class="descripcion">
+                    <h2 class="titulo text-verde">¿Qué es un Convenio Marco?</h2>
+                    <p class="detalle">
+                        Corresponde a un catálogo de productos y servicios, separados por rubros que están disponibles para que los Servicios Públicos puedan acceder a una compra, sin tener que pasar por un proceso licitatorio.<br />
+                        Para ser parte de este catálogo, los proveedores deben haber pasado previamente por un proceso licitatorio realizado por ChileCompra.<br />
+                        <small> Para más detalle, ver información de <a href="https://www.mercadopublico.cl/Home/Contenidos/QueEsCM" target="_blank">ChileCompra</a></small>
+                    </p>
+                    @*<p class="text-right">
+                            <a href="~/GobiernoCentral/#item2" class="btn btn-negro">
+                                Volver
+                            </a>
+                        </p>*@
+                </section>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    <script>
+
+        function graficoAMostrar() {
+            if ($(window).width() < 769)
+                $("#grafMuestro").html($("#grafico2").val());
+            else
+                $("#grafMuestro").html($("#grafico1").val());
+        }
+
+        graficoAMostrar();
+
+
+        function cambio(aux) {
+            if (aux === 2) {
+                var color1 = $("#btn1").css("color");
+                if (color1 !== "rgb(255, 255, 255)") {
+                    $("#btn1").removeClass("btn-active").css("color", "rgb(255, 255, 255)");
+                    $("#btn2").addClass("btn-active").css("color", color1);
+                }
+
+            }
+            else {
+                var color2 = $("#btn2").css("color");
+                if (color2 !== "rgb(255, 255, 255)") {
+                    $("#btn1").addClass("btn-active").css("color", color2);
+                    $("#btn2").removeClass("btn-active").css("color", "rgb(255, 255, 255)");
+                }
+            }
+            var grafico1 = $("#grafico1").val();
+            var grafico2 = $("#grafico2").val();
+            var descripcion1 = $("#descrip1").val();
+            var descripcion2 = $("#descrip2").val();
+            $("#grafico1").val(grafico2);
+            $("#grafico2").val(grafico1);
+            $("#descrip1").val(descripcion2);
+            $("#descrip2").val(descripcion1);
+            $("#grafMuestro").html(grafico2);
+            $("#descripcion1").html(descripcion2);
+
+        }
+
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".cargando").fadeOut(1500);
+            }, 3000);
+        });
+
+
+    </script>
+}

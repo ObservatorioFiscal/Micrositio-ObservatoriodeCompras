@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Twitter Card data use multimedia of Facebook Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@@observafiscalcl" />
+    <meta name="twitter:creator" content="@@observafiscalcl" />
+    <!-- Facebook Card data -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="@ViewData["Url"]" />
+    <meta property="og:title" content="@ViewData["Titulo"]" />
+    <meta property="og:description" content="@ViewData["Descripcion"]" />
+    <meta property="og:image" content="@ViewData["Imagen"]" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="315">
+    <meta property="og:image:height" content="600">
+
+    <title>@ViewData["Title"] - Compras</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap-reboot.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap-grid.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84666147-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84666147-3');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1912929812347842');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1912929812347842&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Hotjar Tracking Code for https://compras.observatoriofiscal.cl/ -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 1023548, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+
+
+</head>
+<body>
+    <partial name="_CookieConsentPartial" />
+    <div class="container-fluid barramenu">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <a onclick="observatorioMostrar()" class="btn-menu"><img src="~/images/menu.svg" class="img-fluid icon-hamburguesa" /></a>
+                <a asp-controller="GobiernoCentral" asp-action=""><img src="~/images/logo.png" class="img-fluid logo" alt="Observatorio de Compras Municipales"></a>
+            </div>
+            <div class="col-md-6 col-12 menu-mobile">
+                <p>
+                    <a onclick="tooltip(1)" class="btn-menu">Sobre la iniciativa</a> |
+                    <a onclick="tooltip(2)" class="btn-menu">Sobre los datos</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+
+    <div class="tooltip-full fill" id="tooltip">
+        <div class="tooltip">
+            <div class="row justify-content-center">
+                <div class="col-12 Graf2" id="sobre">
+                    <h2>Sobre la iniciativa</h2>
+                    <p>
+                        @*El análisis que presentamos en este micrositio es parte de una iniciativa de la sociedad civil que se realiza
+                        entre la <a href="https://observatoriofiscal.cl/" target="_blank" class="text-amarillo">Fundación Observatorio del Gasto Fiscal</a> y la <a href="http://www.chiletransparente.cl/" target="_blank" class="text-amarillo">ONG Chile Transparente</a> sobre el Mercado Público y su
+                        competencia; la función de esta última es analizar aspectos del marco regulatorio y percepciones de los
+                        proveedores del Estado, mientras que el Observatorio se focalizará en el análisis (i) de datos de compras
+                        públicas y (ii) de los socios de empresas proveedoras, con el fin de describir su competencia actual.*@
+
+                        Este micrositio es una iniciativa del <a href="https://observatoriofiscal.cl/" target="_blank" class="text-amarillo">Observatorio de Gasto Fiscal</a>,
+                        que es parte de la sociedad civil chilena. Tiene como objetivo brindar un análisis sobre los datos de compras públicas y los socios de las empresas 
+                        proveedoras del Estado, para así conocer mejor los niveles de competencia o concentración actual. Se enmarca dentro de una iniciativa más amplia para 
+                        profundizar sobre el Mercado Público y su competencia. Nuestro aliado, la ONG Chile Transparente participa en el análisis sobre el marco regulatorio 
+                        y las percepciones de los proveedores del Estado. Este micro sitio se actualizará trimestralmente.
+                        <br /><br />
+                        Ambos aspectos -compras públicas y datos societarios- están relacionados, porque solo al conocer quiénes son los dueños de empresas que participan en licitaciones, convenios marco o tratos directos, sería posible hacer un diagnóstico real sobre la concentración del mercado público.
+                        <br />
+                        No obstante, actualmente el Gobierno de Chile no dispone de datos para saber cuán concentrado está el Mercado Público en realidad, ya que solo para un 42% de las empresas que han participado en los últimos 5 años en compras públicas se conoce quiénes son sus socios directos (a Agosto 2018). Menos aún se conoce quiénes son las personas naturales que son beneficiarios finales (“Beneficial Owners”) de estas empresas, ya que el Gobierno de Chile en general no dispone de estos datos.
+                        <br /><br />
+                        En consecuencia, consideramos urgente que Chile avance en crear un registro de dueños finales de empresas y que este registro sea transparente, especialmente cuando empresas hacen negocios con el Estado.
+                        <b><a onclick="Sumate(2)" class="btn-menu  btn-dos">Súmate con tu voz para ello  !!! &nbsp;&nbsp;<img src="~/images/twitter.svg" width="20" /></a></b>
+                        <br /><br />
+                        Por último queremos agradecer en especial al <a href="https://www.open-contracting.org/?lang=es" target="_blank" class="text-amarillo">Open Contracting Partnership </a> por su apoyo financiero a este proyecto y a <a href="http://www.chilecompra.cl/" target="_blank" class="text-amarillo">Chile Compra</a> por darnos acceso a los datos del Mercado Público.
+                        <br /><br />
+                        Si quieres mantenerte informado de nuevos análisis, actualizaciones, hallazgos o updates en relación a la transparencia de los socios de empresas proveedoras, <a onclick="inscribirse()" class="btn-menu btn-dos"><b>inscríbete aquí para recibir nuestras notificaciones.</b></a>
+
+                        <div id="inscripcion" class="Graf2 text-center">
+                            Correo: <input type="email" id="email" /> &nbsp;&nbsp;<b>y/o</b>&nbsp;&nbsp; Whatsapp: <input type="tel" id="whatsapp" />
+                            <br /><br />
+                        </div>
+                        <br />
+</p>
+                </div>
+                <div class="col-12 Graf2" id="data">
+                    <h2>Sobre los datos usados para este estudio</h2>
+                    <p>
+                        Para la realización de este proyecto se contó con el apoyo de la Dirección de ChileCompra. Nos otorgaron acceso a sus bases de datos, con la finalidad de fomentar el control social a las compras públicas y generar análisis que permitan acercar la información a los usuarios.
+                        <br /><br />
+                        El periodo de análisis de las visualizaciones es en general 2016 y 2017, con excepción de dos gráficos que presentan información 2013 a 2017.
+                        <br /><br />
+                        Los datos provienen de la base de datos transaccional, así como del data warehouse de ChileCompra. Luego fueron sacadas aquellas OC con montos fuera del rango normal, que principalmente se deben a errores de ingreso de moneda al momento de registrar una OC en el sistema, desde los respectivos servicios públicos.
+                        <br /><br />
+                        Aparte de este problema, y del hecho de que en el sistema pueden seguir existiendo OC con errores sin que fuesen detectadas, también hay otros desafíos pendientes acerca de la calidad de datos registrados en la plataforma de Mercado Público. Así por ejemplo, en el campo de los nombres de las empresas proveedoras, así como de los servicios públicos compradores, podemos encontrar valores vacíos y nulos.
+                        <br /><br />
+                        Por ser muy relevante a la hora de querer analizar la competencia y concentración real del mercado público, hicimos además un análisis especial sobre la calidad de los datos disponibles sobre los socios de empresas del Mercado Público. Lo puedes encontrar <a href="../../uploadDocument/doc2.pdf" target="_blank">aquí</a>.
+                        <br /><br />
+                        También queremos hacer ver que dentro de la plataforma del Mercado Público están definidas las instituciones compradoras con una estructura distinta a la definida en la Ley de Presupuestos, tanto a nivel de Partida, como de Capítulo.<br />
+                        Además, en el caso del Ministerio de Bienes Nacionales, la mayoría de sus compras se hacen a través de la entidad ministerio directamente.
+                        <br /><br />
+                        Por último, para facilitar la navegación, es importante señalar que las visualizaciones construidas en Tableau no son responsivas al cambio de zoom. Si cambia el nivel de zoom de su navegador, tendrá que recargar la página para que la visualización se ajuste.
+                        <br /><br />
+                        @*El dato se encuentra en formato csv, en la  sección correspondiente.*@
+                        <br />
+                    </p>
+                </div>
+                <div class="col-10">
+                    <p class="text-center">
+                        <a class="btn" id="botoncerrar" onclick="tooltipClose()">CERRAR</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="observatorio">
+        <div class="menu" id="menu">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center">
+                        <a href="https://observatoriofiscal.cl/" target="_blank">
+                            <img src="~/images/logo-observatorio.svg" class="img-fluid" />
+                        </a>
+                    </p>
+                    <p class="text-center frase">
+                        Somos una iniciativa Ciudadana "Creemos en el uso de la tecnología para el cambio social"
+                        <hr />
+                    </p>
+                    <h5>Conoce más sobre nosotros</h5>
+                    <p class="listado">
+                        <a href="https://observatoriofiscal.cl/" target="_blank">Sitio Original</a>
+                        <a href="https://observatoriofiscal.cl/visualizacion" target="_blank">Visualizaciones</a>
+                        <a href="https://observatoriofiscal.cl/aplicacion" target="_blank">Aplicaciones</a>
+                        <a href="https://observatoriofiscal.cl/publicacion?id=" target="_blank">Publicaciones</a>
+                        <a href="https://observatoriofiscal.cl/proyecto" target="_blank">Proyectos</a>
+                        <hr />
+                    </p>
+                    <h5>Nos interesa tu opinión</h5>
+                    <p class="listado">
+                        <a href="https://observatoriofiscal.cl/home/contacto" target="_blank">Enviar comentarios</a>
+                        <a href="https://observatoriofiscal.cl/home/contacto" target="_blank">Solicitar Corregir información</a>
+                        <hr />
+                    </p>
+                    <h5>
+                        ¿Te gusta lo que hacemos?<br />
+                        ¡Ayúdanos a seguir adelante!
+                    </h5>
+                    <p class="listado">
+                        <a href="https://observatoriofiscal.cl/Home/Donacion" target="_blank">Donar</a>
+                        <hr />
+                    </p>
+                    <h5 class="text-center">Siguenos</h5>
+                    <p class="text-center">
+                        <br />
+                        <a href="https://www.facebook.com/observafiscalcl" target="_blank"><img class="redes" src="~/images/facebook.svg" /></a>
+                        <a href="https://twitter.com/observafiscalcl" target="_blank"><img class="redes" src="~/images/twitter.svg" /></a>
+                        <a href="https://www.youtube.com/channel/UC4tkZz6M5_VGl5R93WO2meQ" target="_blank"><img class="redes" src="~/images/youtube.svg" /></a>
+                        <a href="https://www.instagram.com/observafiscalcl/" target="_blank"><img class="redes" src="~/images/instagram.svg" /></a>
+                        <a href="https://www.linkedin.com/company/observafiscalcl/" target="_blank"><img class="redes" src="~/images/linkedin.svg" /></a>
+                    </p>
+                </div>
+            </div>
+            <div class="cerrar">
+                <a href="#"><<</a>
+            </div>
+        </div>
+        <div class="cerrar" id="cerrar">
+            <a onclick="observatorioOcultar()"><<</a>
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+
+
+    <script>
+
+        function inscribirse(){
+            $("#inscripcion").css("display", "block");
+            $("#botoncerrar").text("Enviar y Cerrar");
+        }
+
+        function observatorioMostrar() {
+            $("#menu").addClass("menu-muestra");
+            $("#cerrar").addClass("block");
+
+        }
+        function observatorioOcultar() {
+            $("#menu").removeClass("menu-muestra");
+            $("#cerrar").removeClass("block");
+        }
+
+        function tooltip(aux) {
+            switch (aux) {
+                case 1:
+                    $("#data").css("display", "none");
+                    $("#sobre").css("display", "block");
+                    $("#tooltip").addClass('block').outerWidth();
+                    $("#tooltip").addClass('show');
+                    break;
+                case 2:
+                    $("#sobre").css("display", "none");
+                    $("#data").css("display", "block");
+                    $("#tooltip").addClass('block').outerWidth();
+                    $("#tooltip").addClass('show');
+                    break;
+            }
+        }
+        function tooltipClose() {
+            var email = $("#email").val();
+            var whatsapp = $("#whatsapp").val();
+            $("#email").val("");
+            $("#whatsapp").val("");
+            if (email != "" || whatsapp != "") {
+                $.ajax({
+                    cache: false,
+                    async: false,
+                    type: 'POST',
+                    data: {
+                        email: email,
+                        whatsapp: whatsapp
+                    },
+                    url: '../../GobiernoCentral/Inscribir',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data == true) {
+                            $("#botoncerrar").text("Cerrar");
+                        }
+                    }
+                });
+            }
+            $("#inscripcion").css("display", "none");
+            $("#botoncerrar").text("Cerrar");
+            $("#tooltip").removeClass("block show");
+            $("#sobre").css("display", "none");
+            $("#data").css("display", "none");
+        }
+
+        $(".tooltip-full").click(function () {
+            tooltipClose();
+        });
+        $('.tooltip').click(function (e) {
+            e.stopPropagation();
+        });
+
+        function compartir(aux) {
+            var url = "";
+            switch (aux) {
+                case 2:
+                    url = "https://twitter.com/?status=";
+                    url = url + "Me gusta esta página " + window.location.href;
+                    break;
+                case 1:
+                    url = "https://www.facebook.com/sharer/sharer.php?u=";
+                    url = url + window.location.href;
+                    break;
+            }
+            windowObjectReference = window.open(
+                url,
+                "DescriptiveWindowName",
+                "resizable,scrollbars,status"
+            );
+        }
+
+        function Sumate(aux) {
+            var url = "https://twitter.com/?status= Yo me sumo!! Chile deberá tener un registro de dueños finales de empresas y este registro deberá ser transparente para empresas que hacen negocios con el Estado.  @@Ch_Transparente @@EsPublicoCL @@observafiscalcl %23BeneficialOwnership https://compras.observatoriofiscal.cl";
+            windowObjectReference = window.open(
+                url,
+                "DescriptiveWindowName",
+                "resizable,scrollbars,status"
+            );
+        }
+        
+    </script>
+
+</body>
+</html>

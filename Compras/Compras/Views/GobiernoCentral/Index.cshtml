@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Gobierno Central";
+}
+@*<div class="hide-scroll">*@
+    <div class="fill" id="item1">
+            <div class="videoContainer">
+                <iframe class="videoContainer__video" width="1920" height="1080" src="https://www.youtube.com/embed/AMOiukpgbX4?loop=1&autoplay=1&playlist=AMOiukpgbX4&modestbranding=1&controls=0&mute=1&fs=0&rel=0&showinfo=0&disablekb=1" frameborder="0" allow="autoplay;"></iframe>
+            </div>
+            <div class="home">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8">
+                            <h3 class="tit">
+                                ¿Cuáles son las empresas que más venden al Estado – y cuánta competencia existe en el
+                                Mercado Público?
+                            </h3>
+                        </div>
+                        <div class="col-12  col-md-4">
+                            <p class="text-center">
+                                <a onclick="bajar()" class="btn btn-negro btn-xl">Explorar <span class="arrows"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="fill" id="item2">
+        <div class="container-fluid fill">
+            <div class="row contenido justify-content-between">
+                <div class="col-12 col-md-4 col-lg-3 order-2 order-md-1 fondoblanco">
+                    <div class="row text-center sin-margen heightfull">
+                        <a asp-controller="GobiernoCentral" asp-action="LicitacionesPublicas" asp-route-id="" class="col-12 cuadro cuadro-link cuadro-full cuadro-morado">
+                            <h2>
+                                <small>Ver datos sobre</small><br>Licitaciones Públicas
+                            </h2>
+                        </a>
+                        <a asp-controller="GobiernoCentral" asp-action="TratosDirectos" asp-route-id="" class="col-12 cuadro cuadro-link cuadro-full cuadro-amarillo">
+                            <h2>
+                                <small>Ver datos sobre</small><br>Tratos Directos
+                            </h2>
+                        </a>
+                        <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" asp-route-id="" class="col-12 cuadro cuadro-link cuadro-full cuadro-verde">
+                            <h2>
+                                <small>Ver datos sobre</small><br>Convenios Marco
+                            </h2>
+                        </a>
+                        <a asp-controller="GobiernoCentral" asp-action="EmpresasoSocios" asp-route-id="" class="col-12 cuadro cuadro-link cuadro-full cuadro-azul">
+                            <h2>
+                                <small>Ver el comportamiento de </small><br> Empresas y/o Socios
+                            </h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 col-lg-9 order-1 order-md-2 fondoblanco2 scrollhidden">
+                    <section class="principal">
+                        <h2>¿Qué empresas le venden al Gobierno y quiénes son sus dueños?</h2>
+                        <p>
+                            <br />
+                            <b>¡Este sitio web es para ti!</b> Queremos mostrarte cómo las instituciones del Estado compran sus bienes y servicios. Podrás conocer si usan más
+                            <a asp-controller="GobiernoCentral" asp-action="LicitacionesPublicas" class="text-morado"><b>licitaciones públicas</b></a>, los
+                            <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco" class="text-verde"><b>convenios marco</b></a>
+                            o los
+                            <a asp-controller="GobiernoCentral" asp-action="TratosDirectos" class="text-amarillo"><b>tratos directos</b></a> y cuánta competencia hay en cada modalidad. También, conocerás cuáles
+                            <a asp-controller="GobiernoCentral" asp-action="EmpresasoSocios" class="text-azul"><b>proveedores</b></a>
+                            están repartiendo o concentrando sus compras.<br /><br />
+                            Pero, te advertimos que se trata de un registro parcial. Especialmente porque hoy no se puede saber quiénes son las personas naturales, dueños finales de las empresas que hacen negocios con el Estado.
+                            <br /><br />
+
+                            ¡<b><a onclick="Sumate(2)" class="btn-menu  btn-dos">Súmate con tu voz</a></b> para que el Gobierno cree un registro de dueños finales de empresas y para que este sea transparente cuando se hace negocios con el Estado! Así podremos saber quiénes son las personas que finalmente se benefician de las compras públicas.
+                            <br /><br />
+                            Navega por las secciones que ves a la izquierda, o lee algunos de nuestros propios hallazgos específicos:
+                            <br />
+                        </p>
+
+                        <p>
+                            <img src="~/images/doc.png" width="20" class="icon-doc" /> <a href="../uploadDocument/doc1.pdf" target="_blank" class="text-negro"> Una mirada sobre la competencia del Mercado Público. <small>(por:José Mora y Jeannette von Wolfersdorff - septiembre 2018)</small></a>
+                        </p>
+                        <p>
+                            <img src="~/images/doc.png" width="20" class="icon-doc" /> <a href="../uploadDocument/doc2.pdf" target="_blank" class="text-negro"> Analisis de calidad de datos de propiedad de empresas proveedoras. <small>(por:José Mora - agosto 2018)</small></a>
+                        </p>
+                        <p>
+                            <img src="~/images/doc.png" width="20" class="icon-doc" /> <a href="../uploadDocument/doc3.pdf" target="_blank" class="text-negro"> Informe de transparencia de datos societarios de empresas. <small>(por:Alberto	Precht y Jeannette von Wolfersdorff - abril 2018)</small></a>
+                        </p>
+                    </section>
+                </div>
+            </div>
+            <div onclick="fullvideo()" class="subir">
+                <p>Ver Video</p>
+            </div>
+            <div class="fullvideo">
+                <div class="cargando cargando-margin">
+                    <div class="videointerno">
+                        @*<iframe class="frametooltip" width="700" height="350" src="https://www.youtube.com/embed/pyWiEvWXWBI?modestbranding=1&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&playlist=IsBInsOj8TY" frameborder="0"></iframe>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@*</div>*@
+@section Scripts
+{
+    <script>
+        $(window).scroll(function (e) {
+            if ($(document).scrollTop() > 50 && $(document).scrollTop() < $(window).height()) {
+                ascrollto("item2");
+                e.stopPropagation();
+            }
+        });
+
+        $('.fullvideo').click(function (e) {
+            e.stopPropagation();
+        });
+
+        $(".fullvideo").click(function () {
+            fullvideoCerrar();
+        });
+
+        $(document).keyup(function (event) {
+            if (event.which == 27) {
+                if ($(".fullvideo").hasClass("show") == true || $("#tooltip").hasClass("show") == true) {
+                    fullvideoCerrar();
+                    tooltipClose();
+                }
+            }
+        });
+
+        function bajar() {
+            ascrollto("item2");
+        }
+        function fullvideo() {
+            $(".videointerno").html("<iframe class='frametooltip' width='80%' height='40%' src='https://www.youtube.com/embed/AMOiukpgbX4?rel=0' frameborder='0' allow='autoplay; encrypted - media' allowfullscreen></iframe>");
+            $(".fullvideo").addClass('block').outerWidth();
+            $(".fullvideo").addClass('show');
+        }
+
+        function fullvideoCerrar() {
+            $(".fullvideo").removeClass('block').outerWidth();
+            $(".fullvideo").removeClass('show');
+            $(".videointerno").html("");
+            
+        }
+
+        function ascrollto(id) {
+            var etop = $('#' + id).offset().top;
+            $('html, body').animate({
+                scrollTop: etop
+            }, 1000);
+        }
+    </script>
+}
