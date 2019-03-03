@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="es-cl">
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -18,7 +19,9 @@
     <meta property="og:image:width" content="315">
     <meta property="og:image:height" content="600">
 
-    <title>@ViewData["Title"] - Compras</title>
+    <title>@ViewData["Titulo"] | Observatorio Fiscal</title>
+    <meta name="description" content="@ViewData["Descripcion"]" />
+    <meta name="keywords" content="Mercado publico, Observatorio de Compras, Compras Publicas, Licitaciones Públicas, Tratos Directos, Convenios Marco, Proveedores">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
@@ -35,52 +38,25 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84666147-3"></script>
+    <!-- Google Tag Manager -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-84666147-3');
-    </script>
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1912929812347842');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-             src="https://www.facebook.com/tr?id=1912929812347842&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-    <!-- Hotjar Tracking Code for https://compras.observatoriofiscal.cl/ -->
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 1023548, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-
-
-
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NB4H4CV');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NB4H4CV"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <partial name="_CookieConsentPartial" />
     <div class="container-fluid barramenu">
         <div class="row">
@@ -89,7 +65,7 @@
                 <a asp-controller="GobiernoCentral" asp-action=""><img src="~/images/logo.png" class="img-fluid logo" alt="Observatorio de Compras Municipales"></a>
             </div>
             <div class="col-md-6 col-12 menu-mobile">
-                <p>
+                <p style="margin-top: 5px !important;">
                     <a onclick="tooltip(1)" class="btn-menu">Sobre la iniciativa</a> |
                     <a onclick="tooltip(2)" class="btn-menu">Sobre los datos</a>
                 </p>
@@ -105,15 +81,15 @@
                     <h2>Sobre la iniciativa</h2>
                     <p>
                         @*El análisis que presentamos en este micrositio es parte de una iniciativa de la sociedad civil que se realiza
-                        entre la <a href="https://observatoriofiscal.cl/" target="_blank" class="text-amarillo">Fundación Observatorio del Gasto Fiscal</a> y la <a href="http://www.chiletransparente.cl/" target="_blank" class="text-amarillo">ONG Chile Transparente</a> sobre el Mercado Público y su
-                        competencia; la función de esta última es analizar aspectos del marco regulatorio y percepciones de los
-                        proveedores del Estado, mientras que el Observatorio se focalizará en el análisis (i) de datos de compras
-                        públicas y (ii) de los socios de empresas proveedoras, con el fin de describir su competencia actual.*@
+                            entre la <a href="https://observatoriofiscal.cl/" target="_blank" class="text-amarillo">Fundación Observatorio del Gasto Fiscal</a> y la <a href="http://www.chiletransparente.cl/" target="_blank" class="text-amarillo">ONG Chile Transparente</a> sobre el Mercado Público y su
+                            competencia; la función de esta última es analizar aspectos del marco regulatorio y percepciones de los
+                            proveedores del Estado, mientras que el Observatorio se focalizará en el análisis (i) de datos de compras
+                            públicas y (ii) de los socios de empresas proveedoras, con el fin de describir su competencia actual.*@
 
                         Este micrositio es una iniciativa del <a href="https://observatoriofiscal.cl/" target="_blank" class="text-amarillo">Observatorio de Gasto Fiscal</a>,
-                        que es parte de la sociedad civil chilena. Tiene como objetivo brindar un análisis sobre los datos de compras públicas y los socios de las empresas 
-                        proveedoras del Estado, para así conocer mejor los niveles de competencia o concentración actual. Se enmarca dentro de una iniciativa más amplia para 
-                        profundizar sobre el Mercado Público y su competencia. Nuestro aliado, la ONG Chile Transparente participa en el análisis sobre el marco regulatorio 
+                        que es parte de la sociedad civil chilena. Tiene como objetivo brindar un análisis sobre los datos de compras públicas y los socios de las empresas
+                        proveedoras del Estado, para así conocer mejor los niveles de competencia o concentración actual. Se enmarca dentro de una iniciativa más amplia para
+                        profundizar sobre el Mercado Público y su competencia. Nuestro aliado, la ONG Chile Transparente participa en el análisis sobre el marco regulatorio
                         y las percepciones de los proveedores del Estado. Este micro sitio se actualizará trimestralmente.
                         <br /><br />
                         Ambos aspectos -compras públicas y datos societarios- están relacionados, porque solo al conocer quiénes son los dueños de empresas que participan en licitaciones, convenios marco o tratos directos, sería posible hacer un diagnóstico real sobre la concentración del mercado público.
@@ -132,7 +108,7 @@
                             <br /><br />
                         </div>
                         <br />
-</p>
+                    </p>
                 </div>
                 <div class="col-12 Graf2" id="data">
                     <h2>Sobre los datos usados para este estudio</h2>
@@ -243,7 +219,7 @@
 
     <script>
 
-        function inscribirse(){
+        function inscribirse() {
             $("#inscripcion").css("display", "block");
             $("#botoncerrar").text("Enviar y Cerrar");
         }
@@ -338,7 +314,7 @@
                 "resizable,scrollbars,status"
             );
         }
-        
+
     </script>
 
 </body>

@@ -4,7 +4,8 @@
 @*<div class="hide-scroll">*@
     <div class="fill" id="item1">
             <div class="videoContainer">
-                <iframe class="videoContainer__video" width="1920" height="1080" src="https://www.youtube.com/embed/AMOiukpgbX4?loop=1&autoplay=1&playlist=AMOiukpgbX4&modestbranding=1&controls=0&mute=1&fs=0&rel=0&showinfo=0&disablekb=1" frameborder="0" allow="autoplay;"></iframe>
+                <img src="~/images/fondohome.jpg" class="fondohome" />
+                <img class="imgvideo" onclick="fullvideo()" src="~/images/printvideo.png" width="40%" alt="Vér video, conocer más..." />
             </div>
             <div class="home">
                 <div class="container">
@@ -71,7 +72,6 @@
                             Navega por las secciones que ves a la izquierda, o lee algunos de nuestros propios hallazgos específicos:
                             <br />
                         </p>
-
                         <p>
                             <img src="~/images/doc.png" width="20" class="icon-doc" /> <a href="../uploadDocument/doc1.pdf" target="_blank" class="text-negro"> Una mirada sobre la competencia del Mercado Público. <small>(por:José Mora y Jeannette von Wolfersdorff - septiembre 2018)</small></a>
                         </p>
@@ -88,7 +88,7 @@
                 <p>Ver Video</p>
             </div>
             <div class="fullvideo">
-                <div class="cargando cargando-margin">
+                <div class="cargando cargando-margin cargando2">
                     <div class="videointerno">
                         @*<iframe class="frametooltip" width="700" height="350" src="https://www.youtube.com/embed/pyWiEvWXWBI?modestbranding=1&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&playlist=IsBInsOj8TY" frameborder="0"></iframe>*@
                     </div>
@@ -128,7 +128,7 @@
             ascrollto("item2");
         }
         function fullvideo() {
-            $(".videointerno").html("<iframe class='frametooltip' width='80%' height='40%' src='https://www.youtube.com/embed/AMOiukpgbX4?rel=0' frameborder='0' allow='autoplay; encrypted - media' allowfullscreen></iframe>");
+            $(".videointerno").html("<iframe class='frametooltip' width='80%' height='40%' src='https://www.youtube.com/embed/pyWiEvWXWBI?modestbranding=1&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&playlist=IsBInsOj8TY' frameborder='0' allow='autoplay; encrypted - media' allowfullscreen></iframe>");
             $(".fullvideo").addClass('block').outerWidth();
             $(".fullvideo").addClass('show');
         }

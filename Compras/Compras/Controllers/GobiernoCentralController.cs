@@ -20,8 +20,8 @@ namespace Compras.Controllers
         public ActionResult Index()
         {
             ViewData["Url"] = "https://compras.observatoriofiscal.cl/GobiernoCentral";
-            ViewData["Titulo"] = "Observatorio de Compras | Capitulo Gobierno Central";
-            ViewData["Descripcion"] = "Conoce cuáles son las empresas que más venden al Estado – y cuánta competencia existe en el Mercado Público";
+            ViewData["Titulo"] = "Compras Gobierno Central - Observatorio de Compras";
+            ViewData["Descripcion"] = "Conoce cuáles son las empresas que más venden al Estado y cuánta competencia existe en el Mercado Público";
             ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg.png";
             return View();
         }
@@ -60,7 +60,7 @@ namespace Compras.Controllers
                 ViewData["Listado"] = _context1.ListPostsLicitaciones.ToList();
                 ViewBag.fondo = "foto-carretera";
                 ViewData["Url"] = "https://compras.observatoriofiscal.cl/GobiernoCentral/LicitacionesPublicas/";
-                ViewData["Titulo"] = "Ver datos sobre Licitaciones Publicas";
+                ViewData["Titulo"] = "Ver datos sobre Licitaciones Publicas - Observatorio de Compras";
                 ViewData["Descripcion"] = "Este mecanismo de compra es uno de los más utilizados, y a través de él, se transan los montos más significativos del Mercado Público. Revisa como se comporta";
                 ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg1.png";
             }
@@ -102,7 +102,7 @@ namespace Compras.Controllers
                 ViewData["Listado"] = _context2.ListPostsTrato.ToList();
                 ViewBag.fondo = "foto-hospital";
                 ViewData["Url"] = "https://compras.observatoriofiscal.cl/GobiernoCentral/TratosDirectos";
-                ViewData["Titulo"] = "Ver datos sobre Tratos Directos";
+                ViewData["Titulo"] = "Ver datos sobre Tratos Directos - Observatorio de Compras";
                 ViewData["Descripcion"] = "Esta modalidad de compra de carácter excepcional, que debe ser utilizado cuando los Servicios Públicos requieren realizar compras de manera rápida. Revisa como se comporta";
                 ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg2.png";
             }
@@ -143,7 +143,7 @@ namespace Compras.Controllers
                 ViewData["Listado"] = _context3.ListPostsConvenio.ToList();
                 ViewBag.fondo = "foto-imprenta";
                 ViewData["Url"] = "https://compras.observatoriofiscal.cl/GobiernoCentral/ConveniosMarco";
-                ViewData["Titulo"] = "Ver datos sobre Convenios Marco";
+                ViewData["Titulo"] = "Ver datos sobre Convenios Marco - Observatorio de Compras";
                 ViewData["Descripcion"] = "Un catálogo de productos y servicios completo para el Estado. Revisa como se comporta";
                 ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg3.png";
             }
@@ -185,7 +185,7 @@ namespace Compras.Controllers
                 ViewData["Listado"] = _context4.ListPostsEmpresas.ToList();
                 ViewBag.fondo = "foto-cocina";
                 ViewData["Url"] = "https://compras.observatoriofiscal.cl/GobiernoCentral/EmpresasoSocios";
-                ViewData["Titulo"] = "Ver el comportamientos de Empresas y/o Socios";
+                ViewData["Titulo"] = "Ver el comportamientos de Empresas y/o Socios - Observatorio de Compras";
                 ViewData["Descripcion"] = "Toda persona natural o jurídica que entrega algún servicio o bien al Estado, a cambio de un monto específico. Revisa como se comporta";
                 ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg4.png";
             }
