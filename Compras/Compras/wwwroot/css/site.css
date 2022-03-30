@@ -20,7 +20,6 @@ h2 small {
 
 .videoContainer {
     background-color: #222222;
-    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -71,8 +70,14 @@ iframe {
 
 
 .logo {
-    height: 35px;
+    margin: 0;
+    http: //localhost:51200/ margin-top: 10px;
 }
+
+    .logo img {
+        max-width: 270px;
+        width: 100%;
+    }
 
 .icon-doc {
     margin-right: 10px;
@@ -95,11 +100,11 @@ iframe {
     }
 
 .home {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 80px;
     width: 100%;
     background-color: #222222;
-    padding: 40px 0;
+    padding: 40px 0 120px 0;
     color: white;
     z-index: 2;
 }
@@ -344,8 +349,8 @@ a.text-negro {
     position: fixed;
     top: 0;
     width: 100%;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
     height: 55px;
     background-color: #222222;
     color: white;
@@ -883,6 +888,7 @@ a.text-negro {
     .menu-mobile {
         margin-top: 15px;
         text-align:center;
+        display:none;
     }
     .tooltip {
         width: 90%;
@@ -972,3 +978,176 @@ a.text-negro {
 .not-underline:hover {
     text-decoration: none;
 }
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+.red {
+    background-color: var(--red);
+    animation-delay: 0.1s;
+}
+
+.blue {
+    background-color: var(--blue);
+    animation-delay: 0.2s;
+}
+
+.violet {
+    background-color: var(--violet);
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    0%, 50%, 100% {
+        transform: scale(1);
+        filter: blur(0px);
+    }
+
+    25% {
+        transform: scale(0.6);
+        filter: blur(3px);
+    }
+
+    75% {
+        filter: blur(3px);
+        transform: scale(1.4);
+    }
+}
+
+
+
+
+
+
+/***********INICIO***********/
+/*BARRA DE MENU REUTILIZABLE*/
+/****************************/
+body {
+    position: relative;
+    left: 0;
+    transition: left .3s ease-out;
+}
+
+    body.visible {
+        left: -270px;
+        transition: left .3s ease-out;
+    }
+
+
+.rotate {
+    transform: rotate( 45deg );
+    display: inline-block;
+    font-size: 39px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    writing-mode: vertical-lr;
+}
+
+    .rotate:hover {
+        background: #152327;
+        border: 1px solid #182225;
+        color: #dcdcdc;
+    }
+
+.navi {
+    visibility: hidden;
+    right: auto;
+    width: 100%;
+    touch-action: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    transition: right .3s linear;
+    right: 0;
+    background: rgba(22, 40, 45,0.2);
+}
+
+    .navi.visible {
+        visibility: visible;
+        transition: visibility 0.3s linear
+    }
+
+        .navi.visible > .navi-content {
+            right: 0;
+            transition: right .3s linear;
+        }
+
+    .navi::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(0 0 0 / 72%);
+        transition: opacity .15s linear;
+    }
+
+.navi-content {
+    right: -270px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #16282d;
+    color: #fff;
+    padding: 7px 10px 40px 10px;
+    min-height: 100vh;
+    width: 270px;
+    touch-action: auto;
+    overflow-y: auto;
+    transition: right .3s linear;
+}
+
+.navi-item {
+    padding: 20px;
+    display: block;
+    border-bottom: 1px solid #26373c;
+    color: white !important;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.navi-red {
+    margin: 4px;
+    padding: 4px;
+    display: inline-block;
+}
+
+.botonmenu {
+}
+
+    .botonmenu:hover svg g rect {
+        fill: #757575;
+        cursor: pointer;
+    }
+
+
+.btn-donar {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px 35px;
+    margin: 10px;
+}
+
+    .btn-donar:hover {
+        background: #f3f3f3;
+        color: #16282d;
+        border: 1px solid #eaeaea;
+    }
+
+.botonmenu {
+    height: 25px;
+    cursor: pointer;
+    margin: 0;
+}
+/***********FINAL************/
+/*BARRA DE MENU REUTILIZABLE*/
+/****************************/

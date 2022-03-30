@@ -257,18 +257,17 @@ function grafo(texto){
             .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
             legendT2.append("text")
-            .attr("x", window.innerWidth - window.innerWidth/18)
-            .style("font-family", "Roboto")
-            .style("font-weight", "400")
-            .style("fill", "black")
-            .attr("y", window.innerHeight - window.innerHeight/1.98)
-            .attr("dy", ".35em")
-            .text("Aristas")
+                .attr("x", window.innerWidth - window.innerWidth / 18)
+                .style("font-family", "Roboto")
+                .style("font-weight", "400")
+                .style("fill", "black")
+                .attr("y", window.innerHeight - window.innerHeight / 1.98)
+                .attr("dy", ".35em")
+                .text("Aristas");
 
 
             // Flechas
             function marker(color) {
-
                     defs.append("svg:marker")
                         .attr("id", color.replace("#", ""))
                         .attr("viewBox", "0 -5 10 10")
@@ -575,16 +574,14 @@ function grafo(texto){
             function linkColor(linkCode) {
                 switch (linkCode)
                 {
-                  case '0.0': 
-                    return '#6d6d6d';
-                  case '1.0':
-                    return '#ff0000';
-                  case '2.0':
-                    return '#ff0000';
-                  case '':
-                    return '#000000';
-                  case null:
-                    return '#000000';
+                    case '0.0' || '0': 
+                        return '#6d6d6d';
+                    case '1.0' || '1':
+                        return '#ff0000';
+                    case '2.0' || '2':
+                        return '#ff0000';
+                    default:
+                        return '#000000';
                 }
             }
         } 

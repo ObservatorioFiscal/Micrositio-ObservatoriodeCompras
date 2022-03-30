@@ -268,7 +268,7 @@ namespace BLL
                     Id = 3,
                     GraficoMobile = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper'></iframe>",
                     GraficoWeb = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper'></iframe>",
-                    Descripcion = "En la visualización se presenta un listado de socios directos de empresas que participan en una misma licitación con al menos dos empresas distintas. El periodo analizado corresponde a los años 2013 a 2017.Al posicionarse sobre una barra se despliega el detalle de las empresas pertenecientes a la persona, y con ellas los montos adjudicados, las ofertas realizadas y las adjudicaciones logradas. Las flechas rojas corresponden a licitaciones adjudicadas.",
+                    Descripcion = "En la visualización se presenta un listado de socios directos de empresas que participan en una misma licitación con al menos dos empresas distintas. El periodo analizado corresponde a todo el año 2021.Al posicionarse sobre una barra se despliega el detalle de las empresas pertenecientes a la persona, y con ellas los montos adjudicados, las ofertas realizadas y las adjudicaciones logradas. Las flechas rojas corresponden a licitaciones adjudicadas.",
                     IdUrl = "Busca_por_Socios",
                     Pregunta = "Socios que participan en una licitación con dos o más empresas",
                     RedTitulo = "Socios que participan en una licitación con dos o más empresas  - Observatorio de Compras",
@@ -277,21 +277,21 @@ namespace BLL
                     RedImagen = "Timg4_2.png"
                 }
             );
-            ListPostsEmpresas.Add(
-                new Post
-                {
-                    Id = 4,
-                    GraficoMobile = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper2'></iframe>",
-                    GraficoWeb = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper2'></iframe>",
-                    Descripcion = "En la visualización se presenta un listado de socios directos de empresas que participan en una misma licitación con al menos dos empresas distintas. El periodo analizado corresponde a los años 2013 a 2017.Al posicionarse sobre una barra se despliega el detalle de las empresas pertenecientes a la persona, y con ellas los montos adjudicados, las ofertas realizadas y las adjudicaciones logradas. Las flechas rojas corresponden a licitaciones adjudicadas.",
-                    IdUrl = "Busca_por_Licitaciones",
-                    Pregunta = "Licitaciones a las que postularon solo dos o más empresas del mismo Socio",
-                    RedTitulo = "Licitaciones a las que postularon solo dos o más empresas del mismo Socio  - Observatorio de Compras",
-                    RedDescripcion = "En la visualización se presentan las licitaciones a las que postularon SOLO dos o más empresas del mismo Socio. El periodo analizado corresponde a los años 2013 a 2017.Al posicionarse sobre un nodo se presentan los valores de cada tipo de nodo: Socio, Empresa, Licitación, y al posicionarse sobre los vínculos, se despliega el detalle de la relación",
-                    RedUrl = "Busca_por_Licitaciones",
-                    RedImagen = "Timg4_3.png"
-                }
-            );
+            //ListPostsEmpresas.Add(
+            //    new Post
+            //    {
+            //        Id = 4,
+            //        GraficoMobile = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper2'></iframe>",
+            //        GraficoWeb = "<iframe style='width: 100%;height: 100vh;border:0;overflow: hidden; ' src='../../Home/Helper2'></iframe>",
+            //        Descripcion = "En la visualización se presenta un listado de socios directos de empresas que participan en una misma licitación con al menos dos empresas distintas. El periodo analizado corresponde a los años 2013 a 2020.Al posicionarse sobre una barra se despliega el detalle de las empresas pertenecientes a la persona, y con ellas los montos adjudicados, las ofertas realizadas y las adjudicaciones logradas. Las flechas rojas corresponden a licitaciones adjudicadas.",
+            //        IdUrl = "Busca_por_Licitaciones",
+            //        Pregunta = "Licitaciones a las que postularon solo dos o más empresas del mismo Socio",
+            //        RedTitulo = "Licitaciones a las que postularon solo dos o más empresas del mismo Socio  - Observatorio de Compras",
+            //        RedDescripcion = "En la visualización se presentan las licitaciones a las que postularon SOLO dos o más empresas del mismo Socio. El periodo analizado corresponde a los años 2013 a 2020.Al posicionarse sobre un nodo se presentan los valores de cada tipo de nodo: Socio, Empresa, Licitación, y al posicionarse sobre los vínculos, se despliega el detalle de la relación",
+            //        RedUrl = "Busca_por_Licitaciones",
+            //        RedImagen = "Timg4_3.png"
+            //    }
+            //);
         }
     }
 }

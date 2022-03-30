@@ -63,10 +63,8 @@ namespace Compras.Controllers
                 ViewData["Titulo"] = "Ver datos sobre Licitaciones Publicas - Observatorio de Compras";
                 ViewData["Descripcion"] = "Este mecanismo de compra es uno de los más utilizados, y a través de él, se transan los montos más significativos del Mercado Público. Revisa como se comporta";
                 ViewData["Imagen"] = "https://compras.observatoriofiscal.cl/images/redes/Timg1.png";
-            }
-            
+            }       
             return View();
-
         }
         
         public ActionResult TratosDirectos(string id)
@@ -192,8 +190,6 @@ namespace Compras.Controllers
             return View();
         }
 
-
-        
         public ActionResult Inscribir()
         {
             return View();
@@ -216,7 +212,6 @@ namespace Compras.Controllers
            
             return Json(true);
         }
-
 
     }
 }

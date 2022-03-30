@@ -1,6 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="es-cl">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="57x57" href="~/favi/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/favi/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/favi/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/favi/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/favi/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/favi/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/favi/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/favi/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/favi/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favi/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/favi/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favi/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="~/favi/ms-icon-144x144.png">
+    <link rel="manifest" href="~/favi/manifest.json">
+    <meta name="msapplication-TileColor" content="#16282d">
+    <meta name="theme-color" content="#16282d">
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,10 +39,13 @@
     <meta property="og:image:width" content="315">
     <meta property="og:image:height" content="600">
 
-    <title>@ViewData["Titulo"] | Observatorio Fiscal</title>
+    <title>@ViewData["Titulo"] - Compras Gobierno Central</title>
     <meta name="description" content="@ViewData["Descripcion"]" />
     <meta name="keywords" content="Mercado publico, Observatorio de Compras, Compras Publicas, Licitaciones Públicas, Tratos Directos, Convenios Marco, Proveedores">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
@@ -40,13 +63,13 @@
 
     <!-- Google Tag Manager -->
     <script>
-    (function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NB4H4CV');</script>
     <!-- End Google Tag Manager -->
 </head>
@@ -59,15 +82,33 @@
     <!-- End Google Tag Manager (noscript) -->
     <partial name="_CookieConsentPartial" />
     <div class="container-fluid barramenu">
-        <div class="row">
-            <div class="col-md-6 col-12">
-                <a onclick="observatorioMostrar()" class="btn-menu"><img src="~/images/menu.svg" class="img-fluid icon-hamburguesa" /></a>
-                <a asp-controller="GobiernoCentral" asp-action=""><img src="~/images/logo.png" class="img-fluid logo" alt="Observatorio de Compras Municipales"></a>
+        <div class="row align-items-center">
+            <div class="col-md-4 col-10">
+                <figure class="logo">
+                    <a  asp-controller="GobiernoCentral" asp-action="Index">
+                        <img src="~/images/logo.png" class="img-fluid" alt="Observatorio de Compras Municipales">
+                    </a>
+                </figure>
+
+
             </div>
             <div class="col-md-6 col-12 menu-mobile">
-                <p style="margin-top: 5px !important;">
+                <p style="margin:0">
                     <a onclick="tooltip(1)" class="btn-menu">Sobre la iniciativa</a> |
                     <a onclick="tooltip(2)" class="btn-menu">Sobre los datos</a>
+                </p>
+            </div>
+            <div class="col-md-2 col-2">
+                <p class="text-right botonmenu" style="margin:0">
+                    <a onclick="Menu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewBox="0 0 34 27">
+                            <g id="Grupo_12" data-name="Grupo 12" transform="translate(-36 -69)">
+                                <rect id="Rectángulo_28" data-name="Rectángulo 28" width="30" height="5" rx="3.5" transform="translate(36 69)" fill="#eff3f5" />
+                                <rect id="Rectángulo_29" data-name="Rectángulo 29" width="30" height="5" rx="3.5" transform="translate(36 79)" fill="#eff3f5" />
+                                <rect id="Rectángulo_30" data-name="Rectángulo 30" width="30" height="5" rx="3.5" transform="translate(36 89)" fill="#eff3f5" />
+                            </g>
+                        </svg>
+                    </a>
                 </p>
             </div>
         </div>
@@ -94,7 +135,7 @@
                         <br /><br />
                         Ambos aspectos -compras públicas y datos societarios- están relacionados, porque solo al conocer quiénes son los dueños de empresas que participan en licitaciones, convenios marco o tratos directos, sería posible hacer un diagnóstico real sobre la concentración del mercado público.
                         <br />
-                        No obstante, actualmente el Gobierno de Chile no dispone de datos para saber cuán concentrado está el Mercado Público en realidad, ya que solo para un 42% de las empresas que han participado en los últimos 5 años en compras públicas se conoce quiénes son sus socios directos (a Agosto 2018). Menos aún se conoce quiénes son las personas naturales que son beneficiarios finales (“Beneficial Owners”) de estas empresas, ya que el Gobierno de Chile en general no dispone de estos datos.
+                        No obstante, actualmente el Gobierno de Chile no dispone de datos para saber cuán concentrado está el Mercado Público en realidad, ya que solo para un 42% de las empresas que han participado en los últimos 5 años en compras públicas se conoce quiénes son sus socios directos (a Junio 2021). Menos aún se conoce quiénes son las personas naturales que son beneficiarios finales (“Beneficial Owners”) de estas empresas, ya que el Gobierno de Chile en general no dispone de estos datos.
                         <br /><br />
                         En consecuencia, consideramos urgente que Chile avance en crear un registro de dueños finales de empresas y que este registro sea transparente, especialmente cuando empresas hacen negocios con el Estado.
                         <b><a onclick="Sumate(2)" class="btn-menu  btn-dos">Súmate con tu voz para ello  !!! &nbsp;&nbsp;<img src="~/images/twitter.svg" width="20" /></a></b>
@@ -115,7 +156,7 @@
                     <p>
                         Para la realización de este proyecto se contó con el apoyo de la Dirección de ChileCompra. Nos otorgaron acceso a sus bases de datos, con la finalidad de fomentar el control social a las compras públicas y generar análisis que permitan acercar la información a los usuarios.
                         <br /><br />
-                        El periodo de análisis de las visualizaciones es en general 2016 y 2017, con excepción de dos gráficos que presentan información 2013 a 2017.
+                        El periodo de análisis de las visualizaciones es en general 2019 - 2021, con excepción de un gráficos que presentan información 2019 - 2020.
                         <br /><br />
                         Los datos provienen de la base de datos transaccional, así como del data warehouse de ChileCompra. Luego fueron sacadas aquellas OC con montos fuera del rango normal, que principalmente se deben a errores de ingreso de moneda al momento de registrar una OC en el sistema, desde los respectivos servicios públicos.
                         <br /><br />
@@ -143,62 +184,98 @@
 
 
 
+    <!--*******************************-->
+    <!--*****INICIO BARRA ESTANDAR*****-->
+    <section id="menu" class="navi ">
+        <div class="navi-content">
+            <p class="text-center">
+                <span class="rotate">
+                    <a onclick="Menu()"><b>+</b></a>
+                </span>
+            </p>
+            <a asp-controller="GobiernoCentral" asp-action="LicitacionesPublicas"   class="navi-item">Licitaciones Públicas</a>
+            <a asp-controller="GobiernoCentral" asp-action="TratosDirectos"         class="navi-item">Tratos Directos</a>
+            <a asp-controller="GobiernoCentral" asp-action="ConveniosMarco"         class="navi-item">Convenios Marco</a>
+            <a asp-controller="GobiernoCentral" asp-action="EmpresasoSocios"        class="navi-item">Empresas y/o Socios</a>
 
-    <div class="observatorio">
-        <div class="menu" id="menu">
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-center">
-                        <a href="https://observatoriofiscal.cl/" target="_blank">
-                            <img src="~/images/logo-observatorio.svg" class="img-fluid" />
-                        </a>
-                    </p>
-                    <p class="text-center frase">
-                        Somos una iniciativa Ciudadana "Creemos en el uso de la tecnología para el cambio social"
-                        <hr />
-                    </p>
-                    <h5>Conoce más sobre nosotros</h5>
-                    <p class="listado">
-                        <a href="https://observatoriofiscal.cl/" target="_blank">Sitio Original</a>
-                        <a href="https://observatoriofiscal.cl/visualizacion" target="_blank">Visualizaciones</a>
-                        <a href="https://observatoriofiscal.cl/aplicacion" target="_blank">Aplicaciones</a>
-                        <a href="https://observatoriofiscal.cl/publicacion?id=" target="_blank">Publicaciones</a>
-                        <a href="https://observatoriofiscal.cl/proyecto" target="_blank">Proyectos</a>
-                        <hr />
-                    </p>
-                    <h5>Nos interesa tu opinión</h5>
-                    <p class="listado">
-                        <a href="https://observatoriofiscal.cl/home/contacto" target="_blank">Enviar comentarios</a>
-                        <a href="https://observatoriofiscal.cl/home/contacto" target="_blank">Solicitar Corregir información</a>
-                        <hr />
-                    </p>
-                    <h5>
-                        ¿Te gusta lo que hacemos?<br />
-                        ¡Ayúdanos a seguir adelante!
-                    </h5>
-                    <p class="listado">
-                        <a href="https://observatoriofiscal.cl/Home/Donacion" target="_blank">Donar</a>
-                        <hr />
-                    </p>
-                    <h5 class="text-center">Siguenos</h5>
-                    <p class="text-center">
-                        <br />
-                        <a href="https://www.facebook.com/observafiscalcl" target="_blank"><img class="redes" src="~/images/facebook.svg" /></a>
-                        <a href="https://twitter.com/observafiscalcl" target="_blank"><img class="redes" src="~/images/twitter.svg" /></a>
-                        <a href="https://www.youtube.com/channel/UC4tkZz6M5_VGl5R93WO2meQ" target="_blank"><img class="redes" src="~/images/youtube.svg" /></a>
-                        <a href="https://www.instagram.com/observafiscalcl/" target="_blank"><img class="redes" src="~/images/instagram.svg" /></a>
-                        <a href="https://www.linkedin.com/company/observafiscalcl/" target="_blank"><img class="redes" src="~/images/linkedin.svg" /></a>
-                    </p>
-                </div>
-            </div>
-            <div class="cerrar">
-                <a href="#"><<</a>
-            </div>
+            <p><br><br><small><b>Proyecto de:</b></small></p>
+            <p class="text-center">
+                <a href="https://observatoriofiscal.cl/" target="_blank">
+                    <img src="https://observatoriofiscal.cl/Content/image/LogoColorblanco.svg" width="220">
+                </a><br>
+            </p>
+            <p class="navi-item text-center">
+                <small>
+                    Somos una Fundación buscando contribuir vía la generación de información a un gasto público eficiente y centrado en las necesidades reales de las personas.
+                </small>
+            </p>
+            <p class="text-center">
+                <a href="https://www.facebook.com/observafiscalcl" target="_blank" class="navi-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 640 640">
+                        <path id="_001-facebook" data-name="001-facebook" d="M604.672,0H35.3A35.321,35.321,0,0,0,0,35.328V604.7A35.321,35.321,0,0,0,35.328,640H341.875V392.5H258.75V295.625h83.125V224.332c0-82.676,50.473-127.676,124.223-127.676,35.324,0,65.68,2.633,74.527,3.809v86.41H489.77c-40.125,0-47.895,19.066-47.895,47.051v61.7h95.938l-12.5,96.875H441.875V640h162.8A35.319,35.319,0,0,0,640,604.687V35.3A35.318,35.318,0,0,0,604.672,0Zm0,0" transform="translate(0 0)" fill="#fff" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/observafiscalcl" target="_blank" class="navi-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 639.877 640">
+                        <g id="_011-instagram" data-name="011-instagram" transform="translate(-0.449)">
+                            <path id="Trazado_12" data-name="Trazado 12" d="M638.7,188.162c-1.5-34.006-7-57.384-14.876-77.642a163.945,163.945,0,0,0-93.646-93.641C509.8,9,486.546,3.5,452.54,2,418.281.376,407.4,0,320.512,0s-97.768.376-131.9,1.875c-34.006,1.5-57.384,7-77.637,14.876A156.156,156.156,0,0,0,54.209,53.761,157.571,157.571,0,0,0,17.327,110.4C9.449,130.778,3.95,154.029,2.451,188.035c-1.626,34.26-2,45.136-2,132.029s.376,97.768,1.875,131.9c1.5,34.006,7,57.384,14.881,77.642a163.919,163.919,0,0,0,93.642,93.642c20.38,7.878,43.632,13.377,77.642,14.876,34.128,1.5,45.009,1.875,131.9,1.875s97.768-.371,131.9-1.875c34.006-1.5,57.384-7,77.637-14.876a163.7,163.7,0,0,0,93.646-93.642c7.873-20.38,13.377-43.636,14.876-77.642,1.5-34.133,1.875-45.009,1.875-131.9s-.127-97.768-1.626-131.9Zm-57.633,261.3c-1.377,31.256-6.627,48.134-11,59.387A106.165,106.165,0,0,1,509.3,569.614c-11.252,4.376-28.253,9.626-59.387,11-33.757,1.5-43.881,1.875-129.273,1.875s-95.644-.371-129.278-1.875c-31.256-1.372-48.135-6.622-59.387-11A98.481,98.481,0,0,1,95.22,545.733a99.5,99.5,0,0,1-23.882-36.755c-4.376-11.252-9.626-28.258-11-59.387-1.5-33.757-1.875-43.886-1.875-129.278s.371-95.644,1.875-129.273c1.372-31.256,6.622-48.135,11-59.387a97.276,97.276,0,0,1,24.009-36.76A99.35,99.35,0,0,1,132.1,71.016c11.252-4.376,28.258-9.626,59.387-11,33.757-1.5,43.886-1.875,129.273-1.875,85.52,0,95.644.376,129.278,1.875,31.256,1.377,48.134,6.627,59.387,11a98.41,98.41,0,0,1,36.755,23.877,99.481,99.481,0,0,1,23.882,36.76c4.376,11.252,9.626,28.253,11,59.387,1.5,33.757,1.875,43.881,1.875,129.273s-.376,95.395-1.875,129.152Zm0,0" transform="translate(0 0)" fill="#fff" />
+                            <path id="Trazado_13" data-name="Trazado 13" d="M289.356,124.5A164.407,164.407,0,1,0,453.764,288.907,164.449,164.449,0,0,0,289.356,124.5Zm0,271.055A106.647,106.647,0,1,1,396,288.908,106.664,106.664,0,0,1,289.356,395.555Zm0,0" transform="translate(31.156 31.156)" fill="#fff" />
+                            <path id="Trazado_14" data-name="Trazado 14" d="M439.218,126.983A38.384,38.384,0,1,1,400.831,88.6,38.385,38.385,0,0,1,439.218,126.983Zm0,0" transform="translate(90.59 22.172)" fill="#fff" />
+                        </g>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/observafiscalcl" target="_blank" class="navi-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 787.49 640">
+                        <path id="_013-twitter" data-name="013-twitter" d="M247.741,636.171c297.181,0,459.7-246.2,459.7-459.7q0-10.489-.458-20.881a328.793,328.793,0,0,0,80.593-83.666A322.348,322.348,0,0,1,694.79,97.371,162.176,162.176,0,0,0,765.834,8,324.042,324.042,0,0,1,663.242,47.219a161.706,161.706,0,0,0-275.327,147.34c-134.28-6.757-253.356-71.043-333.034-168.8A161.712,161.712,0,0,0,104.9,241.446a160.307,160.307,0,0,1-73.172-20.2c-.024.679-.024,1.339-.024,2.061A161.611,161.611,0,0,0,161.335,381.688a161.373,161.373,0,0,1-72.974,2.769A161.742,161.742,0,0,0,239.294,496.676a324.139,324.139,0,0,1-200.672,69.16A328.809,328.809,0,0,1,.082,563.6a457.354,457.354,0,0,0,247.664,72.579" transform="translate(-0.082 3.824)" fill="#fff" />
+                    </svg>
+
+                </a>
+                <a href="https://www.linkedin.com/company/observafiscalcl" target="_blank" class="navi-red">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 640 611.739">
+                        <g id="_010-linkedin" data-name="010-linkedin" transform="translate(0 0.668)">
+                            <path id="Trazado_9" data-name="Trazado 9" d="M77.613-.668C30.684-.668,0,30.148,0,70.652c0,39.609,29.77,71.3,75.813,71.3H76.7c47.848,0,77.625-31.7,77.625-71.3-.895-40.5-29.777-71.32-76.715-71.32Zm0,0" fill="#fff" />
+                            <path id="Trazado_10" data-name="Trazado 10" d="M8.109,198.313H145.3V611.071H8.109Zm0,0" fill="#fff" />
+                            <path id="Trazado_11" data-name="Trazado 11" d="M482.055,188.625c-74.012,0-123.641,69.547-123.641,69.547V198.313h-137.2V611.07H358.406V380.57c0-12.34.895-24.66,4.52-33.484,9.918-24.641,32.488-50.168,70.391-50.168,49.645,0,69.5,37.852,69.5,93.34V611.071H640V374.4c0-126.781-67.687-185.777-157.945-185.777Zm0,0" fill="#fff" />
+                        </g>
+                    </svg>
+
+                </a>
+            </p>
+            <p class="text-center">
+                <br><small><b>Te gusta lo que hacemos,<br> ¡Ayúdanos a seguir adelante!</b></small><br>
+                <a href="https://observatoriofiscal.cl/Conocenos/Donacion" target="_blank" class="btn btn-donar">Donación</a>
+            </p>
+            <p><br><br><small><b>Nos interesa tu opinión:</b></small></p>
+            <p>
+                <a href="https://observatoriofiscal.cl/Conocenos/Contacto" target="_blank" class="navi-item">Enviar Comentario</a>
+                <a href="https://observatoriofiscal.cl/Conocenos/Contacto" target="_blank" class="navi-item">Solicitar Corregir información</a>
+            </p>
+
         </div>
-        <div class="cerrar" id="cerrar">
-            <a onclick="observatorioOcultar()"><<</a>
-        </div>
-    </div>
+        <script>
+            function Menu() {
+                let menu = document.getElementById("menu");
+
+                if (menu.classList.contains('visible')) {
+                    menu.classList.remove("visible");
+                    document.body.classList.remove("visible")
+                }
+                else {
+                    menu.classList.add("visible");
+                    document.body.classList.add("visible")
+                }
+            }
+        </script>
+    </section>
+
+    <!--*****FINAL BARRA ESTANDAR*****-->
+    <!--*******************************-->
+
+
+
+
+
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

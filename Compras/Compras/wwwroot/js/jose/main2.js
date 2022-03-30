@@ -575,15 +575,13 @@ function grafo(texto){
             function linkColor(linkCode) {
                 switch (linkCode)
                 {
-                  case '0.0': 
+                  case '0.0' || '0': 
                     return '#6d6d6d';
-                  case '1.0':
+                case '1.0' || '1':
                     return '#ff0000';
-                  case '2.0':
+                case '2.0' || '2':
                     return '#ff0000';
-                  case '':
-                    return '#000000';
-                  case null:
+                default:
                     return '#000000';
                 }
             }

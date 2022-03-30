@@ -3,10 +3,9 @@
 }
 @*<div class="hide-scroll">*@
     <div class="fill" id="item1">
-            <div class="videoContainer">
-                <img src="~/images/fondohome.jpg" class="fondohome" />
-                <img class="imgvideo" onclick="fullvideo()" src="~/images/printvideo.png" width="40%" alt="Vér video, conocer más..." />
-            </div>
+        <div class="videoContainer">
+            <img src="~/images/fondohome.jpg" class="fondohome" />
+            <img class="imgvideo" onclick="fullvideo()" src="~/images/printvideo.png" width="40%" alt="Vér video, conocer más..." />
             <div class="home">
                 <div class="container">
                     <div class="row align-items-center">
@@ -23,7 +22,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
+        
     </div>
     <div class="fill" id="item2">
         <div class="container-fluid fill">
@@ -100,12 +101,12 @@
 @section Scripts
 {
     <script>
-        $(window).scroll(function (e) {
-            if ($(document).scrollTop() > 50 && $(document).scrollTop() < $(window).height()) {
-                ascrollto("item2");
-                e.stopPropagation();
-            }
-        });
+        //$(window).scroll(function (e) {
+        //    if ($(document).scrollTop() > 50 && $(document).scrollTop() < $(window).height()) {
+        //        ascrollto("item2");
+        //        e.stopPropagation();
+        //    }
+        //});
 
         $('.fullvideo').click(function (e) {
             e.stopPropagation();
@@ -128,7 +129,7 @@
             ascrollto("item2");
         }
         function fullvideo() {
-            $(".videointerno").html("<iframe class='frametooltip' width='80%' height='40%' src='https://www.youtube.com/embed/pyWiEvWXWBI?modestbranding=1&autoplay=1&controls=0&fs=0&loop=1&rel=0&showinfo=0&disablekb=1&playlist=IsBInsOj8TY' frameborder='0' allow='autoplay; encrypted - media' allowfullscreen></iframe>");
+            $(".videointerno").html("<iframe width='80%' height='40%' src='https://www.youtube.com/embed/AMOiukpgbX4' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>");
             $(".fullvideo").addClass('block').outerWidth();
             $(".fullvideo").addClass('show');
         }
